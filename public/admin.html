@@ -1,0 +1,78 @@
+<!-- public/admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin - Screen Sharing</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e9f5ff; /* Light blue background */
+        color: #333; /* Dark text color */
+        text-align: center;
+        padding: 50px;
+      }
+      h1 {
+        color: #ff5722; /* Orange color for the heading */
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+      button {
+        background-color: #4caf50; /* Green button */
+        color: white; /* White text on button */
+        border: none;
+        border-radius: 5px;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin: 10px; /* Space between buttons */
+      }
+      button:hover {
+        background-color: #388e3c; /* Darker green on hover */
+      }
+      #shareLink {
+        margin-top: 20px;
+        font-size: 1.2em;
+        color: #2196f3; /* Blue color for the share link text */
+        background-color: #f0f4c3; /* Light green background for the share link section */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+      }
+      #shareLink input {
+        width: calc(100% - 20px); /* Adjust width for padding */
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid #4caf50; /* Green border */
+        border-radius: 5px;
+      }
+      .copy-button {
+        background-color: #2196f3; /* Blue button */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+      }
+      .copy-button:hover {
+        background-color: #1976d2; /* Darker blue on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Admin Screen Sharing</h1>
+    <button id="startSharing">Start Sharing</button>
+    <button id="stopSharing" style="display: none">Stop Sharing</button>
+    <div id="shareLink"></div>
+
+    <!-- Include Socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Include SimplePeer via CDN -->
+    <script src="https://unpkg.com/simple-peer@9.11.1/simplepeer.min.js"></script>
+    <!-- Admin JavaScript -->
+    <script src="admin.js"></script>
+  </body>
+</html>
